@@ -76,6 +76,8 @@ build/llvm.BUILT: src/llvm.CLONED
 		-DCMAKE_BUILD_TYPE=MinSizeRel \
 		-DCMAKE_INSTALL_PREFIX=$(ROOT_DIR)/dist \
 		-DLLVM_TARGETS_TO_BUILD= \
+		-DLLVM_ENABLE_FFI=ON \
+		-DLLVM_ENABLE_RTTI=ON \
 		-DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD=WebAssembly \
 		$(ROOT_DIR)/src/llvm
 	cd build/llvm; $(MAKE) -j 8 \
