@@ -5,7 +5,7 @@ ROOT_DIR=${CURDIR}
 LLVM_REV=344317
 CLANG_REV=344318
 LLD_REV=344318
-MUSL_SHA=edeb5004e6e016e326c475ce53199755d76d103f
+MUSL_SHA=6489af63b184d21691c2b915ad64adc8bd147fc7 #edeb5004e6e016e326c475ce53199755d76d103f
 COMPILER_RT_REV=344320
 LIBCXX_REV=344320
 LIBCXXABI_REV=344320
@@ -38,12 +38,12 @@ endif
 
 src/musl.CLONED:
 	mkdir -p src/
-	cd src/; git clone https://github.com/jfbastien/musl.git
+	cd src/; git clone https://github.com/WebGHC/musl.git # https://github.com/jfbastien/musl.git
 ifdef MUSL_SHA
 	cd src/musl; git checkout $(MUSL_SHA)
 endif
 	cd src/musl; patch -p 1 < $(ROOT_DIR)/patches/musl.1.patch
-	cd src/musl; patch -p 1 < $(ROOT_DIR)/patches/musl.2.patch
+#	cd src/musl; patch -p 1 < $(ROOT_DIR)/patches/musl.2.patch
 	touch src/musl.CLONED
 
 src/compiler-rt.CLONED:
