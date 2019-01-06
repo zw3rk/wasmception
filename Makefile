@@ -85,6 +85,8 @@ build/llvm.BUILT: src/llvm.CLONED
 		install-lld \
 		install-llc \
 		install-llvm-ar \
+		install-llvm-dis \
+		install-llvm-nm \
 		install-llvm-ranlib \
 		install-llvm-dwarfdump \
 		llvm-config
