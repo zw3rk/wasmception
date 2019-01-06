@@ -180,7 +180,7 @@ sysroot/lib/wasmception.wasm: build/llvm.BUILT basics/wasmception.c
 		-c -O3 -g $(DEBUG_PREFIX_MAP) \
 		-o sysroot/lib/wasmception.wasm
 
-build: build/llvm.BUILT build/musl.BUILT build/compiler-rt.BUILT build/libcxxabi.BUILT build/libcxx.BUILT $(BASICS)
+build: build/llvm.BUILT build/musl.BUILT build/compiler-rt.BUILT $(BASICS)
 
 strip: build/llvm.BUILT
 	cd dist/bin; strip clang-8 llc lld llvm-ar
