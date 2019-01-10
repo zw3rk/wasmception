@@ -89,6 +89,7 @@ build/llvm.BUILT: src/llvm.CLONED
 		install-llvm-nm \
 		install-llvm-ranlib \
 		install-llvm-dwarfdump \
+                install-llvm-objdump \
 		llvm-config
 	touch build/llvm.BUILT
 
